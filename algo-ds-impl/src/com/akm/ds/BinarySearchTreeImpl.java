@@ -12,4 +12,8 @@ class Node {
 	Node(int data) {
 		this.data = data;
 	}
+
+	public void insert(int data) {
+
+	}
 }
