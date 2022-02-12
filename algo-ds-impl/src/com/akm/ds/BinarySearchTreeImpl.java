@@ -12,7 +12,12 @@ public class BinarySearchTreeImpl {
 		bst.insert(20);
 		bst.insert(18);
 		bst.insert(25);
+		
 		bst.preorder();
+		System.out.println();
+		bst.inorder();
+		System.out.println();
+		bst.postorder();
 	}
 }
 
@@ -75,7 +80,18 @@ class BST {
 		}
 		return node;
 	}
+/**
+ *
+What is Tree Traversal?
+All trees can be traversed in three main ways. Each particular approach gives us a different arrangement of nodes. The three main approaches used are:-
 
+1) Preorder - This traversal involves printing the root, then recursively calling the function for the left subtree and the right subtree. 
+
+2) Postorder - This traversal involves recursively calling the function for the left subtree and the right subtree and then printing the root. 
+
+3) Inorder - This traversal involves recursively calling the function for the left subtree, printing the root, and then recursively calling the function for the right subtree.
+
+ */
 	// Traversal
 	public void preorder() {
 		preorder(root);
@@ -84,9 +100,35 @@ class BST {
 	private void preorder(Node node) {
 		if (node == null)
 			return;
-
-		System.out.println(node.data);
+		System.out.print(node.data + " ");
 		preorder(node.left);
 		preorder(node.right);
 	}
+
+	// Traversal
+	public void inorder() {
+		inorder(root);
+	}
+
+	private void inorder(Node node) {
+		if (node == null)
+			return;
+		inorder(node.left);
+		System.out.print(node.data + " ");
+		inorder(node.right);
+	}
+
+	// Traversal
+	public void postorder() {
+		postorder(root);
+	}
+
+	private void postorder(Node node) {
+		if (node == null)
+			return;
+		postorder(node.left);
+		postorder(node.right);
+		System.out.print(node.data + " ");
+	}
+
 }
